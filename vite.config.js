@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true,
+    allowedHosts: ['portfolio.polychron.online']
   },
   preview: {
     port: 5173,
