@@ -54,7 +54,7 @@ const BOOT_LOGS = [
   '[0.000012] Initializing UBUNTU-SRV-01 (6.8.0-generic x86_64) // Host: [REDACTED]...',
   '[0.041280] Mounting /dev/nvme0n1p2 (AHCI Mode Enabled) -> /root/polychron.online [OK]',
   '[0.089410] Establishing SSH Tunnel & WebSocket Telemetry Stream -> ws://127.0.0.1:8080/telemetry [OK]',
-  '[0.142900] Loading ULTRON Local LLM Engine + Neural Text-to-Speech Pipeline [OK]',
+  '[0.142900] Loading [REDACTED] Local LLM Engine + Neural Text-to-Speech Pipeline [OK]',
   '[0.210450] Initializing Deep Q-Learning Policy Network & Experience Replay Buffer [OK]',
   '[0.294100] Calibrating ESP32 / ESP8266 / Arduino Uno Serial Actuators & NFC Kill-Switch [OK]',
   '[0.358920] Compiling WebGL Obsidian Rhombus Geometry & 88-Shard Fracture Matrix [OK]',
@@ -101,11 +101,11 @@ const DOSSIER_TABS = [
   {
     id: 'software',
     label: '03 // AI & FULL-STACK',
-    title: 'Ultron AI, Deep RL & Full-Stack Ecosystems',
+    title: '[REDACTED] AI, Deep RL & Full-Stack Ecosystems',
     summary:
       'From low-latency voice assistants running local language models to desktop and web platforms backed by relational databases, every project is engineered for speed and clarity.',
     highlights: [
-      'Ultron Local AI Voice Assistant: Python-driven local LLM orchestration paired with a custom low-latency Text-to-Speech (TTS) audio pipeline.',
+      '[REDACTED] Local AI Voice Assistant: Python-driven local LLM orchestration paired with a custom low-latency Text-to-Speech (TTS) audio pipeline.',
       'Deep Q-Learning Agent: Reinforcement learning neural network trained via Bellman updates and epsilon-greedy exploration to master arcade environments.',
       'The Forge & Full-Stack Suites: Created "The Forge" gym management desktop suite (featuring a 5-node diamond/rhombus section navigator, dedicated "Power lifts" training hub, and MySQL backend), alongside Polychat and FocusFlight.',
     ],
@@ -146,7 +146,7 @@ const PROJECTS = [
     category: 'Artificial Intelligence & Reinforcement Learning',
     tagline: 'Offline LLM voice assistant with neural TTS synthesis alongside a Deep Q-Learning autonomous agent.',
     description:
-      'A dual-pillar AI engineering suite. Pillar 1 is Ultron: a Python-based local language model voice assistant featuring custom wake-word routing, context memory, and a fluid Text-to-Speech (TTS) pipeline. Pillar 2 is a Deep Q-Network (DQN) reinforcement learning agent trained via experience replay to autonomously master arcade game physics.',
+      'A dual-pillar AI engineering suite. Pillar 1 is [REDACTED] a Python-based local language model voice assistant featuring custom wake-word routing, context memory, and a fluid Text-to-Speech (TTS) pipeline. Pillar 2 is a Deep Q-Network (DQN) reinforcement learning agent trained via experience replay to autonomously master arcade game physics.',
     tech: ['Python', 'Local LLMs', 'Neural TTS Pipeline', 'Deep Q-Learning (RL)', 'PyTorch / NumPy', 'AsyncIO'],
     metrics: [
       { label: 'TTS Voice Latency', value: '185ms' },
@@ -766,7 +766,7 @@ export default function App() {
     } else if (cmd === 'projects') {
       nextHistory.push({
         type: 'response',
-        text: '1. [SHARD-01] POLYCHRON       -> Autonomous road-cleaning & walking robotics (ESP32 + Relays)\n2. [SHARD-02] ULTRON & RL     -> Local LLM Voice Assistant (TTS) + Deep Q-Learning Agent\n3. [SHARD-03] THE FORGE       -> 5-Node Diamond UI Gym Desktop Suite ("Power lifts" + MySQL)\n4. [SHARD-04] POLYCHAT/FLIGHT -> Full-Stack React, FastAPI & Supabase Web Ecosystems',
+        text: '1. [SHARD-01] POLYCHRON       -> Autonomous road-cleaning & walking robotics (ESP32 + Relays)\n2. [SHARD-02] [REDACTED] & RL     -> Local LLM Voice Assistant (TTS) + Deep Q-Learning Agent\n3. [SHARD-03] THE FORGE       -> 5-Node Diamond UI Gym Desktop Suite ("Power lifts" + MySQL)\n4. [SHARD-04] POLYCHAT/FLIGHT -> Full-Stack React, FastAPI & Supabase Web Ecosystems',
       });
     } else if (cmd === 'skills') {
       nextHistory.push({
@@ -867,9 +867,10 @@ export default function App() {
     DOSSIER_TABS.find((t) => t.id === activeDossierTab) || DOSSIER_TABS[0];
 
   // Helper to render "[REDACTED]" tokens inside strings with the FBC badge
+  // Updated with case-insensitive regex to catch [redacted] variations
   const renderWithRedactions = (text) => {
     if (typeof text !== 'string') return text;
-    const parts = text.split('[REDACTED]');
+    const parts = text.split(/\[redacted\]/i);
     if (parts.length === 1) return text;
     return parts.map((part, idx) => (
       <React.Fragment key={idx}>
@@ -878,7 +879,7 @@ export default function App() {
       </React.Fragment>
     ));
   };
-croll
+
   return (
     <div className="relative min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
       {/* =====================================================================
@@ -1439,7 +1440,7 @@ croll
                       SELF-HOSTED LAB &amp; DOMAIN
                     </div>
                     <div className="text-slate-200">
-                      Ubuntu Home Server <Redacted label="NODE-CLASSIFIED" /> • polychron.online
+                      Ubuntu Home Server <Redacted /> • polychron.online
                     </div>
                   </div>
                 </div>
@@ -1451,7 +1452,7 @@ croll
                       ACADEMIC &amp; DAILY DISCIPLINE
                     </div>
                     <div className="text-slate-200">
-                      Class 12 CBSE • <Redacted label="REDACTED" />
+                      Class 12 CBSE • <Redacted />
                     </div>
                   </div>
                 </div>
@@ -1483,7 +1484,7 @@ croll
 
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                  {currentDossier.title}
+                  {renderWithRedactions(currentDossier.title)}
                 </h3>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
                   {renderWithRedactions(currentDossier.summary)}
@@ -1562,11 +1563,11 @@ croll
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition mb-2">
-                    {project.title}
+                    {renderWithRedactions(project.title)}
                   </h3>
 
                   <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                    {project.tagline}
+                    {renderWithRedactions(project.tagline)}
                   </p>
 
                   <div className="grid grid-cols-3 gap-2.5 mb-6 font-mono">
@@ -1579,7 +1580,7 @@ croll
                           {m.label}
                         </div>
                         <div className="text-xs sm:text-sm font-bold text-white mt-0.5">
-                          {m.value}
+                          {renderWithRedactions(m.value)}
                         </div>
                       </div>
                     ))}
@@ -1760,7 +1761,7 @@ croll
               {terminalHistory.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`whitespace-pre-wrap leading-relaxed flex flex-wrap items-center ${
+                  className={`whitespace-pre-wrap leading-relaxed flex flex-wrap items-center gap-y-1 ${
                     item.type === 'command'
                       ? 'text-cyan-300 font-bold'
                       : item.type === 'error'
@@ -1817,11 +1818,11 @@ croll
           >
             <div className="flex items-center justify-between pb-4 mb-5 border-b border-slate-800">
               <div>
-                <span className="font-mono text-xs text-cyan-400">
-                  {activeProject.id} // {activeProject.category}
+                <span className="font-mono text-xs text-cyan-400 flex flex-wrap gap-1">
+                  {renderWithRedactions(activeProject.id)} // {renderWithRedactions(activeProject.category)}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
-                  {activeProject.title}
+                <h3 className="text-xl sm:text-2xl font-bold text-white mt-1 flex flex-wrap gap-1">
+                  {renderWithRedactions(activeProject.title)}
                 </h3>
               </div>
               <button
@@ -1833,7 +1834,7 @@ croll
             </div>
 
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-              {activeProject.description}
+              {renderWithRedactions(activeProject.description)}
             </p>
 
             <div className="mb-6">
@@ -1849,7 +1850,7 @@ croll
                     <span className="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-300 flex items-center justify-center shrink-0">
                       {i + 1}
                     </span>
-                    <span>{step}</span>
+                    <span>{renderWithRedactions(step)}</span>
                   </div>
                 ))}
               </div>
@@ -1859,9 +1860,9 @@ croll
               {activeProject.tech.map((t, i) => (
                 <span
                   key={i}
-                  className="font-mono text-xs px-3 py-1 rounded-lg bg-slate-900 text-cyan-300 border border-slate-800"
+                  className="font-mono text-xs px-3 py-1 rounded-lg bg-slate-900 text-cyan-300 border border-slate-800 flex items-center"
                 >
-                  {t}
+                  {renderWithRedactions(t)}
                 </span>
               ))}
             </div>
