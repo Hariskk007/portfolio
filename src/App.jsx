@@ -142,7 +142,7 @@ const PROJECTS = [
   },
   {
     id: 'SHARD-02',
-    title: 'ULTRON // LOCAL AI & DEEP RL CORE',
+    title: '[REDACTED] // LOCAL AI & DEEP RL CORE',
     category: 'Artificial Intelligence & Reinforcement Learning',
     tagline: 'Offline LLM voice assistant with neural TTS synthesis alongside a Deep Q-Learning autonomous agent.',
     description:
@@ -878,7 +878,7 @@ export default function App() {
       </React.Fragment>
     ));
   };
-
+croll
   return (
     <div className="relative min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
       {/* =====================================================================
@@ -1345,11 +1345,7 @@ export default function App() {
             <p className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-2xl mb-8 bg-slate-950/65 backdrop-blur-md p-4 rounded-2xl border border-slate-800/80">
               I am <strong className="text-white font-semibold">Haris K K</strong>—a
               full-stack software developer, local AI &amp; reinforcement learning
-              engineer, and robotics builder. Scroll down to fracture the{' '}
-              <span className="text-cyan-300 font-mono text-sm">
-                Obsidian Rhombus
-              </span>{' '}
-              and inspect my systems.
+              engineer, and robotics builder. welcome to my paradise!!
             </p>
 
             {/* Primary CTA Buttons */}
@@ -1431,7 +1427,7 @@ export default function App() {
                   <div>
                     <div className="text-[10px] text-slate-400">SECTOR &amp; TELEMETRY</div>
                     <div className="text-slate-200">
-                      Chennai, India // Coords: <Redacted />
+                      Coords: <Redacted />
                     </div>
                   </div>
                 </div>
