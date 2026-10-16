@@ -35,18 +35,30 @@ import {
 } from 'lucide-react';
 
 // ============================================================================
-// DATA CONSTANTS: HARIS K K PORTFOLIO ARCHITECTURE (NO YOLO REFERENCES)
+// HELPER COMPONENT: "CONTROL" (FBC) STYLE CLASSIFIED REDACTION TAG
+// ============================================================================
+const Redacted = ({ label = '[REDACTED]' }) => (
+  <span
+    className="inline-flex items-center px-1.5 py-0.5 mx-0.5 rounded bg-red-950/50 border border-red-500/40 font-mono text-[11px] font-bold tracking-wider text-red-400 select-none shadow-[0_0_10px_rgba(239,68,68,0.15)]"
+    title="Classified Level-5 Clearance Required"
+  >
+    {label}
+  </span>
+);
+
+// ============================================================================
+// DATA CONSTANTS: HARIS K K PORTFOLIO ARCHITECTURE (CLASSIFIED EDITION)
 // ============================================================================
 
 const BOOT_LOGS = [
-  '[0.000012] Initializing UBUNTU-SRV-01 (5.15.0-generic x86_64) // Dell Inspiron 5580 Node...',
+  '[0.000012] Initializing UBUNTU-SRV-01 (6.8.0-generic x86_64) // Host: [REDACTED]...',
   '[0.041280] Mounting /dev/nvme0n1p2 (AHCI Mode Enabled) -> /root/polychron.online [OK]',
   '[0.089410] Establishing SSH Tunnel & WebSocket Telemetry Stream -> ws://127.0.0.1:8080/telemetry [OK]',
   '[0.142900] Loading ULTRON Local LLM Engine + Neural Text-to-Speech Pipeline [OK]',
   '[0.210450] Initializing Deep Q-Learning Policy Network & Experience Replay Buffer [OK]',
   '[0.294100] Calibrating ESP32 / ESP8266 / Arduino Uno Serial Actuators & NFC Kill-Switch [OK]',
   '[0.358920] Compiling WebGL Obsidian Rhombus Geometry & 88-Shard Fracture Matrix [OK]',
-  '[0.419000] Architect Identity Verified: HARIS K K // Chennai, IN (13.0827° N, 80.2707° E) [ONLINE]',
+  '[0.419000] Architect Identity Verified: HARIS K K // Sector: [REDACTED] (Coords: [REDACTED]) [ONLINE]',
 ];
 
 const DOSSIER_TABS = [
@@ -55,16 +67,16 @@ const DOSSIER_TABS = [
     label: '01 // WHO I AM',
     title: 'Full-Stack, AI & Embedded Systems Architect',
     summary:
-      'I am Haris K K, a builder based in Chennai, India who engineers systems across the entire computing stack—from bare-metal ESP32 microcontrollers and self-hosted Ubuntu servers to local AI voice assistants and high-contrast full-stack applications.',
+      'I am Haris K K, a systems builder operating out of [REDACTED] who engineers software and hardware across the entire computing stack—from bare-metal ESP32 microcontrollers and self-hosted Ubuntu servers to local AI voice assistants and high-contrast full-stack applications.',
     highlights: [
       'Architecting across hardware & software: bridging microcontroller sensor loops with FastAPI/Flask backends and reactive 3D/glassmorphic frontends.',
-      'Disciplined execution: balancing intensive engineering mathematics & Physics/CS preparation with structured powerlifting and daily strength training.',
+      'Disciplined execution: balancing Class 12 CBSE academics and [REDACTED] protocols with structured powerlifting and daily strength training.',
       'Dark cinematic UI philosophy: crafting tactile geometric layouts (like 5-node diamond navigators and telemetry HUDs) that feel like operating a spacecraft.',
     ],
     stats: [
-      { label: 'BASE LOCATION', value: 'Chennai, TN, India' },
+      { label: 'BASE LOCATION', value: '[REDACTED]' },
       { label: 'PRIMARY DOMAIN', value: 'polychron.online' },
-      { label: 'HOME SERVER', value: 'Ubuntu Server (5580)' },
+      { label: 'ACADEMIC LEVEL', value: 'Class 12 CBSE' },
       { label: 'TRAINING DISCIPLINE', value: 'Powerlifting & Iron' },
     ],
   },
@@ -77,12 +89,12 @@ const DOSSIER_TABS = [
     highlights: [
       'Polychron Autonomous Robot: Engineered circuit wiring, relay actuation, and Bluetooth/ESP32 control logic for a road-cleaning robot and all-terrain walking platform.',
       'NFC Network Kill-Switch: Built a physical hardware interrupt system using microcontrollers and relay modules to sever or restore network pathways on command.',
-      'Self-Hosted Ubuntu Server: Configured a Dell Inspiron 5580 running Ubuntu Server OS with custom disk partition tables, BIOS AHCI tuning, and remote SSH/SCP workflows.',
+      'Self-Hosted Ubuntu Server: Configured bare-metal node [REDACTED] running Ubuntu Server OS with custom disk partition tables, BIOS AHCI tuning, and remote SSH/SCP workflows.',
     ],
     stats: [
       { label: 'MCU STACK', value: 'ESP32 / ESP8266 / Uno' },
       { label: 'HARDWARE BUS', value: 'UART / I2C / Relays / NFC' },
-      { label: 'INFRASTRUCTURE', value: 'Ubuntu Server + SSH/SCP' },
+      { label: 'INFRASTRUCTURE', value: 'Ubuntu Server // [REDACTED]' },
       { label: 'CLOUD & DNS', value: 'GCP + polychron.online' },
     ],
   },
@@ -155,7 +167,7 @@ const PROJECTS = [
     category: 'Desktop Architecture & Relational DB',
     tagline: 'Role-based gym management desktop system featuring a 5-node diamond/rhombus navigator and MySQL core.',
     description:
-      'Engineered for a Class 12 computer science software architecture assignment, The Forge reimagines desktop management UIs with a dark cinematic aesthetic. Features secure desktop authentication, role-based dashboards built around an interactive 5-node diamond/rhombus section selector (including a dedicated "Power lifts" training module), and a normalized MySQL relational backend.',
+      'Engineered for a Class 12 CBSE computer science software architecture assignment, The Forge reimagines desktop management UIs with a dark cinematic aesthetic. Features secure desktop authentication, role-based dashboards built around an interactive 5-node diamond/rhombus section selector (including a dedicated "Power lifts" training module), and a normalized MySQL relational backend.',
     tech: ['Python', 'NiceGUI', 'MySQL', 'Role-Based Auth', '5-Node Diamond UI', 'Custom CSS Shaders'],
     metrics: [
       { label: 'Navigator Topology', value: '5-Node Rhombus' },
@@ -176,7 +188,7 @@ const PROJECTS = [
     category: 'Full-Stack Web & Cloud Architecture',
     tagline: 'Real-time communication, gamified deep-work telemetry, and high-velocity e-commerce platforms.',
     description:
-      'A trio of full-stack web applications: Polychat (low-latency multi-room messaging), FocusFlight (productivity & study session flight-deck tracker tailored for intense exam & coding blocks), and a full-featured e-commerce car marketplace backed by React, FastAPI/Flask, and Supabase/SQLite.',
+      'A trio of full-stack web applications: Polychat (low-latency multi-room messaging), FocusFlight (productivity & study session flight-deck tracker tailored for intense academic & coding blocks), and a full-featured e-commerce car marketplace backed by React, FastAPI/Flask, and Supabase/SQLite.',
     tech: ['React', 'FastAPI / Flask', 'Supabase', 'MySQL / SQLite', 'Tailwind CSS', 'REST / WebSockets'],
     metrics: [
       { label: 'Realtime Sync', value: 'Sub-30ms' },
@@ -187,7 +199,7 @@ const PROJECTS = [
       'React Single-Page Client with Dark Glassmorphic UI',
       'FastAPI / Flask Asynchronous REST & WebSocket Gateway',
       'Supabase Realtime & PostgreSQL / SQLite Persistence Layer',
-      'Deployed & Routed via polychron.online & Google Cloud Platform',
+      'Deployed & Routed via polychron.online & Polychron PaaS',
     ],
     accent: '#38bdf8',
   },
@@ -249,7 +261,7 @@ export default function App() {
   const [terminalHistory, setTerminalHistory] = useState([
     {
       type: 'system',
-      text: 'Connected to haris@ubuntu-srv-01 (Dell Inspiron 5580 // Ubuntu Server x86_64).',
+      text: 'Connected to haris@ubuntu-srv-01 (Node: [REDACTED] // Ubuntu Server x86_64).',
     },
     {
       type: 'info',
@@ -481,7 +493,7 @@ export default function App() {
     const universeGroup = new THREE.Group();
     scene.add(universeGroup);
 
-    // 1. Central Obsidian Rhombus (Octahedron stretched along Y axis)
+    // 1. Central Obsidian Rhombus
     const rhombusGeo = new THREE.OctahedronGeometry(2.05, 0);
     rhombusGeo.scale(1, 1.48, 1);
 
@@ -498,7 +510,7 @@ export default function App() {
     const coreRhombus = new THREE.Mesh(rhombusGeo, rhombusMat);
     universeGroup.add(coreRhombus);
 
-    // Glowing Wireframe Cage around the Rhombus
+    // Glowing Wireframe Cage
     const wireGeo = new THREE.WireframeGeometry(rhombusGeo);
     const wireMat = new THREE.LineBasicMaterial({
       color: 0x06b6d4,
@@ -542,7 +554,7 @@ export default function App() {
     orbitalRing2.rotation.x = Math.PI / 4;
     universeGroup.add(orbitalRing2);
 
-    // 2. Mathematical Fracturing Shards (88 Shards)
+    // 2. Mathematical Fracturing Shards
     const shardCount = 88;
     const shardGroup = new THREE.Group();
     universeGroup.add(shardGroup);
@@ -637,7 +649,7 @@ export default function App() {
       const scroll = scrollRef.current;
       const load = cpuRef.current;
 
-      // Dynamic color shift driven by live Ubuntu Server CPU Telemetry
+      // Dynamic color shift
       let activeHex = 0x06b6d4; // Cryo Cyan
       if (load >= 75) {
         activeHex = 0xef4444; // Overdrive Crimson
@@ -653,11 +665,10 @@ export default function App() {
 
       const speedMultiplier = 1 + (load / 100) * 2.2;
 
-      // Rotate Central Rhombus & Inner Singularity
+      // Rotations
       coreRhombus.rotation.y += 0.0045 * speedMultiplier;
       coreRhombus.rotation.x = Math.sin(elapsed * 0.5) * 0.18 + scroll * 1.4;
 
-      // Shrink solid core slightly as it fractures on scroll
       const coreScale = Math.max(0.42, 1 - scroll * 0.55);
       coreRhombus.scale.setScalar(coreScale);
 
@@ -670,7 +681,7 @@ export default function App() {
       orbitalRing2.rotation.x -= 0.004 * speedMultiplier;
       orbitalRing2.rotation.y += 0.002 * speedMultiplier;
 
-      // Fracture Shards outward based on scroll progress + CPU turbulence
+      // Fracture Math
       const fractureFactor = Math.min(1, scroll * 1.55);
       const jitterAmplitude = load > 75 ? 0.09 : 0.025;
 
@@ -703,7 +714,7 @@ export default function App() {
         s.mesh.rotation.y += 0.014 * s.speedOffset * speedMultiplier;
       }
 
-      // Smooth Camera Parallax with Mouse/Touch + Scroll Zoom
+      // Parallax
       const targetCamX = mouseNormalizedRef.current.x * 1.45;
       const targetCamY = mouseNormalizedRef.current.y * 1.05;
       camera.position.x += (targetCamX - camera.position.x) * 0.05;
@@ -715,7 +726,6 @@ export default function App() {
       camera.position.z += (targetCamZ - camera.position.z) * 0.05;
       camera.lookAt(0, 0, 0);
 
-      // Slow Starfield Drift
       starField.rotation.y = elapsed * 0.018;
       starField.rotation.x = scroll * 0.35;
 
@@ -746,12 +756,12 @@ export default function App() {
     if (cmd === 'help') {
       nextHistory.push({
         type: 'response',
-        text: 'Available commands:\n  whoami       -> Display Architect Identity & Dossier\n  about        -> Jump to About Haris K K Dossier\n  projects     -> List engineered hardware, AI & full-stack systems\n  skills       -> Inspect full-stack, AI/RL & hardware matrix\n  neofetch     -> Display UBUNTU-SRV-01 hardware & OS summary\n  telemetry    -> Read real-time server metrics\n  stress <val> -> Set server CPU load (10-98) to test 3D shaders\n  contact      -> Display direct communication channels\n  clear        -> Clear terminal buffer',
+        text: 'Available commands:\n  whoami       -> Display Architect Identity & Classified Dossier\n  about        -> Jump to About Haris K K Dossier\n  projects     -> List engineered hardware, AI & full-stack systems\n  skills       -> Inspect full-stack, AI/RL & hardware matrix\n  neofetch     -> Display UBUNTU-SRV-01 hardware & OS summary\n  telemetry    -> Read real-time server metrics\n  stress <val> -> Set server CPU load (10-98) to test 3D shaders\n  contact      -> Display direct communication channels\n  clear        -> Clear terminal buffer',
       });
     } else if (cmd === 'whoami' || cmd === 'about') {
       nextHistory.push({
         type: 'response',
-        text: 'HARIS K K // Full-Stack Developer, AI/RL Engineer & Robotics Builder\nLocation   : Chennai, Tamil Nadu, India (13.0827° N, 80.2707° E)\nAcademic   : Class 12 CBSE // JEE Mains & BITSAT Engineering Prep + IITM BS Applicant\nHardware   : ESP32, ESP8266, Arduino Uno, Relays, NFC Network Kill-Switch\nHome Server: Dell Inspiron 5580 running Ubuntu Server (SSH/SCP + polychron.online)\nDiscipline : Powerlifting & Strength Training + Deep Software Architecture',
+        text: 'HARIS K K // Full-Stack Developer, AI/RL Engineer & Robotics Builder\nLocation   : [REDACTED] // Coords: [REDACTED]\nAcademic   : Class 12 CBSE // Directive: [REDACTED]\nHardware   : ESP32, ESP8266, Arduino Uno, Relays, NFC Network Kill-Switch\nHome Server: Bare-Metal Node [REDACTED] running Ubuntu Server (SSH/SCP + polychron.online)\nDiscipline : Powerlifting & Strength Training + Deep Software Architecture',
       });
     } else if (cmd === 'projects') {
       nextHistory.push({
@@ -766,7 +776,7 @@ export default function App() {
     } else if (cmd === 'neofetch') {
       nextHistory.push({
         type: 'response',
-        text: `       _._          haris@ubuntu-srv-01\n    .-'   '-.       -------------------\n   /         \\      OS: Ubuntu Server 24.04 LTS x86_64\n  |  O     O  |     Host: Dell Inspiron 5580 Home Lab\n  |   .---.   |     Kernel: 6.8.0-generic (AHCI Mode)\n   \\  '---'  /      Domain: polychron.online\n    '-.   .-'       CPU Load: ${cpuLoad}% | Temp: ${tempC}°C | RAM: ${ramUsage}%\n       '-'          UI Theme: Event Horizon Obsidian Rhombus`,
+        text: `       _._          haris@ubuntu-srv-01\n    .-'   '-.       -------------------\n   /         \\      OS: Ubuntu Server 24.04 LTS x86_64\n  |  O     O  |     Host: Bare-Metal Node [REDACTED]\n  |   .---.   |     Kernel: 6.8.0-generic (AHCI Mode)\n   \\  '---'  /      Domain: polychron.online\n    '-.   .-'       CPU Load: ${cpuLoad}% | Temp: ${tempC}°C | RAM: ${ramUsage}%\n       '-'          Clearance: LEVEL-5 [REDACTED]`,
       });
     } else if (cmd === 'telemetry') {
       nextHistory.push({
@@ -792,7 +802,7 @@ export default function App() {
     } else if (cmd === 'contact') {
       nextHistory.push({
         type: 'response',
-        text: 'Domain  : https://polychron.online\nLocation: Chennai, Tamil Nadu, India\nStatus  : Open for high-impact engineering collaborations & technical builds.',
+        text: 'Domain  : https://polychron.online\nSector  : [REDACTED]\nStatus  : Open for high-impact engineering collaborations & technical builds.',
       });
     } else if (cmd === 'clear') {
       setTerminalHistory([]);
@@ -809,7 +819,7 @@ export default function App() {
     setTerminalInput('');
   };
 
-  // Dynamic Theme Helpers based on CPU Load
+  // Dynamic Theme Helpers
   const themeState = useMemo(() => {
     if (cpuLoad >= 75) {
       return {
@@ -855,6 +865,19 @@ export default function App() {
 
   const currentDossier =
     DOSSIER_TABS.find((t) => t.id === activeDossierTab) || DOSSIER_TABS[0];
+
+  // Helper to render "[REDACTED]" tokens inside strings with the FBC badge
+  const renderWithRedactions = (text) => {
+    if (typeof text !== 'string') return text;
+    const parts = text.split('[REDACTED]');
+    if (parts.length === 1) return text;
+    return parts.map((part, idx) => (
+      <React.Fragment key={idx}>
+        {part}
+        {idx < parts.length - 1 && <Redacted />}
+      </React.Fragment>
+    ));
+  };
 
   return (
     <div className="relative min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
@@ -933,7 +956,7 @@ export default function App() {
               {BOOT_LOGS.slice(0, bootStep).map((line, idx) => (
                 <div key={idx} className="leading-relaxed break-words">
                   <span className="text-cyan-400 mr-2">&gt;</span>
-                  {line}
+                  {renderWithRedactions(line)}
                 </div>
               ))}
               {bootStep < BOOT_LOGS.length && (
@@ -1290,7 +1313,7 @@ export default function App() {
 
       {/* =====================================================================
           MAIN SCROLLABLE CONTENT STREAM
-      ===================================================================== */}
+      ==================================================================== */}
       <main className="relative z-10 pt-20 pb-28 md:pb-24">
         {/* -------------------------------------------------------------------
             SECTION 00: HERO // THE EVENT HORIZON
@@ -1303,7 +1326,7 @@ export default function App() {
             <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 mb-6">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               <span className="font-mono text-xs text-cyan-300 tracking-wide">
-                ARCHITECT: HARIS K K // CHENNAI, IN
+                ARCHITECT: HARIS K K // SECTOR: <Redacted />
               </span>
               <span className="text-slate-600 hidden sm:inline">|</span>
               <span className="font-mono text-xs text-slate-400 hidden sm:inline">
@@ -1361,7 +1384,6 @@ export default function App() {
 
         {/* -------------------------------------------------------------------
             SECTION 01: ABOUT ME // HARIS K K ARCHITECT DOSSIER
-            (High-Contrast Obsidian Glassmorphism for Crystal Legibility)
         ------------------------------------------------------------------- */}
         <section
           id="about"
@@ -1396,7 +1418,7 @@ export default function App() {
               </div>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-                Based in <strong className="text-white">Chennai, Tamil Nadu</strong>,
+                Operating as a <strong className="text-white">Systems Architect</strong>,
                 I build systems that connect high-contrast interfaces to real-world
                 hardware and intelligent backends—from autonomous ESP32 robots and
                 local LLM voice pipelines to full-stack web and desktop software.
@@ -1407,9 +1429,9 @@ export default function App() {
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/90 border border-slate-800/90">
                   <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
                   <div>
-                    <div className="text-[10px] text-slate-400">COORDINATES</div>
+                    <div className="text-[10px] text-slate-400">SECTOR &amp; TELEMETRY</div>
                     <div className="text-slate-200">
-                      Chennai, India (13.0827° N, 80.2707° E)
+                      Chennai, India // Coords: <Redacted />
                     </div>
                   </div>
                 </div>
@@ -1421,7 +1443,7 @@ export default function App() {
                       SELF-HOSTED LAB &amp; DOMAIN
                     </div>
                     <div className="text-slate-200">
-                      Ubuntu Home Server (5580) • polychron.online
+                      Ubuntu Home Server <Redacted label="NODE-CLASSIFIED" /> • polychron.online
                     </div>
                   </div>
                 </div>
@@ -1430,10 +1452,10 @@ export default function App() {
                   <Dumbbell className="w-4 h-4 text-red-400 shrink-0" />
                   <div>
                     <div className="text-[10px] text-slate-400">
-                      DAILY DISCIPLINE
+                      ACADEMIC &amp; DAILY DISCIPLINE
                     </div>
                     <div className="text-slate-200">
-                      Powerlifting, Strength Training &amp; JEE/BITSAT Prep
+                      Class 12 CBSE • Powerlifting • <Redacted label="DIRECTIVE REDACTED" />
                     </div>
                   </div>
                 </div>
@@ -1447,7 +1469,6 @@ export default function App() {
 
             {/* Right Column: Interactive Multi-Tab Architect Dossier */}
             <div className="lg:col-span-7 rounded-3xl bg-slate-950/90 backdrop-blur-2xl border border-slate-800 p-6 sm:p-8 shadow-2xl">
-              {/* Dossier Tab Buttons */}
               <div className="flex flex-wrap gap-2 mb-6 pb-4 border-b border-slate-800">
                 {DOSSIER_TABS.map((tab) => (
                   <button
@@ -1464,13 +1485,12 @@ export default function App() {
                 ))}
               </div>
 
-              {/* Active Dossier Content */}
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
                   {currentDossier.title}
                 </h3>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-                  {currentDossier.summary}
+                  {renderWithRedactions(currentDossier.summary)}
                 </p>
 
                 <div className="space-y-3 mb-6">
@@ -1481,13 +1501,12 @@ export default function App() {
                     >
                       <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                       <span className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                        {item}
+                        {renderWithRedactions(item)}
                       </span>
                     </div>
                   ))}
                 </div>
 
-                {/* 4-Column Quick Spec Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
                   {currentDossier.stats.map((st, idx) => (
                     <div
@@ -1497,8 +1516,8 @@ export default function App() {
                       <div className="text-[10px] text-slate-400 mb-1">
                         {st.label}
                       </div>
-                      <div className="text-xs font-bold text-cyan-300">
-                        {st.value}
+                      <div className="text-xs font-bold text-cyan-300 flex flex-wrap gap-1">
+                        {renderWithRedactions(st.value)}
                       </div>
                     </div>
                   ))}
@@ -1554,7 +1573,6 @@ export default function App() {
                     {project.tagline}
                   </p>
 
-                  {/* Metrics Bar */}
                   <div className="grid grid-cols-3 gap-2.5 mb-6 font-mono">
                     {project.metrics.map((m, i) => (
                       <div
@@ -1573,7 +1591,6 @@ export default function App() {
                 </div>
 
                 <div>
-                  {/* Tech Stack Pills */}
                   <div className="flex flex-wrap gap-1.5 mb-6">
                     {project.tech.map((t, i) => (
                       <span
@@ -1613,7 +1630,6 @@ export default function App() {
               </h2>
             </div>
 
-            {/* Domain Filter Buttons */}
             <div className="flex flex-wrap gap-1.5">
               {['ALL', 'Full-Stack', 'AI & RL', 'Hardware & IoT', 'Infra & DB'].map(
                 (domain) => (
@@ -1706,7 +1722,6 @@ export default function App() {
           </div>
 
           <div className="rounded-3xl bg-slate-950/95 backdrop-blur-2xl border border-slate-800 overflow-hidden shadow-2xl">
-            {/* Terminal Window Bar */}
             <div className="px-4 sm:px-6 py-3.5 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -1721,7 +1736,6 @@ export default function App() {
               </span>
             </div>
 
-            {/* One-Tap Quick Command Chips (Mobile & Desktop Friendly) */}
             <div className="px-4 sm:px-6 py-3 bg-slate-900/40 border-b border-slate-800/80 flex items-center gap-2 overflow-x-auto">
               <span className="font-mono text-[11px] text-slate-400 shrink-0">
                 QUICK EXEC:
@@ -1746,12 +1760,11 @@ export default function App() {
               ))}
             </div>
 
-            {/* Terminal Output History */}
             <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm space-y-3 max-h-96 overflow-y-auto">
               {terminalHistory.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`whitespace-pre-wrap leading-relaxed ${
+                  className={`whitespace-pre-wrap leading-relaxed flex flex-wrap items-center ${
                     item.type === 'command'
                       ? 'text-cyan-300 font-bold'
                       : item.type === 'error'
@@ -1761,11 +1774,10 @@ export default function App() {
                       : 'text-slate-300'
                   }`}
                 >
-                  {item.text}
+                  {renderWithRedactions(item.text)}
                 </div>
               ))}
 
-              {/* Command Input Line */}
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -1796,7 +1808,7 @@ export default function App() {
       </main>
 
       {/* =====================================================================
-          PROJECT ARCHITECTURE MODAL (BLACK HOLE GRAVITATIONAL LENS VIEW)
+          PROJECT ARCHITECTURE MODAL
       ===================================================================== */}
       {activeProject && (
         <div
