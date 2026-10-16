@@ -70,14 +70,14 @@ const DOSSIER_TABS = [
       'I am Haris K K, a systems builder operating out of [REDACTED] who engineers software and hardware across the entire computing stack—from bare-metal ESP32 microcontrollers and self-hosted Ubuntu servers to local AI voice assistants and high-contrast full-stack applications.',
     highlights: [
       'Architecting across hardware & software: bridging microcontroller sensor loops with FastAPI/Flask backends and reactive 3D/glassmorphic frontends.',
-      'Disciplined execution: balancing Class 12 CBSE academics and [REDACTED] protocols with structured powerlifting and daily strength training.',
+      'Disciplined execution: balancing Class 12 CBSE academics and [REDACTED] protocols with structured strength training.',
       'Dark cinematic UI philosophy: crafting tactile geometric layouts (like 5-node diamond navigators and telemetry HUDs) that feel like operating a spacecraft.',
     ],
     stats: [
       { label: 'BASE LOCATION', value: '[REDACTED]' },
       { label: 'PRIMARY DOMAIN', value: 'polychron.online' },
       { label: 'ACADEMIC LEVEL', value: 'Class 12 CBSE' },
-      { label: 'TRAINING DISCIPLINE', value: 'Powerlifting & Iron' },
+      { label: 'TRAINING DISCIPLINE', value: '[REDACTED]' },
     ],
   },
   {
@@ -761,7 +761,7 @@ export default function App() {
     } else if (cmd === 'whoami' || cmd === 'about') {
       nextHistory.push({
         type: 'response',
-        text: 'HARIS K K // Full-Stack Developer, AI/RL Engineer & Robotics Builder\nLocation   : [REDACTED] // Coords: [REDACTED]\nAcademic   : Class 12 CBSE // Directive: [REDACTED]\nHardware   : ESP32, ESP8266, Arduino Uno, Relays, NFC Network Kill-Switch\nHome Server: Bare-Metal Node [REDACTED] running Ubuntu Server (SSH/SCP + polychron.online)\nDiscipline : Powerlifting & Strength Training + Deep Software Architecture',
+        text: 'HARIS K K // Full-Stack Developer, AI/RL Engineer & Robotics Builder\nLocation   : [REDACTED] // Coords: [REDACTED]\nAcademic   : Class 12 CBSE // Directive: [REDACTED]\nHardware   : ESP32, ESP8266, Arduino Uno, Relays, NFC Network Kill-Switch\nHome Server: Bare-Metal Node [REDACTED] running Ubuntu Server (SSH/SCP + polychron.online)\nDiscipline : [REDACTED] + Deep Software Architecture',
       });
     } else if (cmd === 'projects') {
       nextHistory.push({
@@ -1455,7 +1455,7 @@ export default function App() {
                       ACADEMIC &amp; DAILY DISCIPLINE
                     </div>
                     <div className="text-slate-200">
-                      Class 12 CBSE • Powerlifting • <Redacted label="DIRECTIVE REDACTED" />
+                      Class 12 CBSE • <Redacted label="REDACTED" />
                     </div>
                   </div>
                 </div>
